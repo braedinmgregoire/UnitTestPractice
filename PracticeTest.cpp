@@ -19,21 +19,33 @@ TEST(PracticeTest, is_simple_palindrome)
     Practice obj;
     bool actual = obj.isPalindrome("Not a palindrome");
     ASSERT_FALSE(actual);
-
-		actual = obj.isPalindrome("banaanab");
-		ASSERT_TRUE(actual);
-
-		actual = obj.isPalindrome("baNAnab");
-		ASSERT_TRUE(actual);
-
-		actual = obj.isPalindrome("xbac    ");
-		ASSERT_FALSE(actual);
-
-		actual = obj.isPalindrome("");
-		ASSERT_FALSE(actual);
 }
 
-TEST(PracticeTest, sortDescending)
+TEST(PracticeTest, actually_pal){
+	Practice obj;
+		bool actual = obj.isPalindrome("banaanab");
+		ASSERT_TRUE(actual);
+	}
+
+TEST(PracticeTest, mixedCasePal){
+	Practice obj;
+		bool actual = obj.isPalindrome("baNAnab");
+		ASSERT_TRUE(actual);
+	}
+
+TEST(PracticeTest, hangingEnd){
+	Practice obj;
+		bool actual = obj.isPalindrome("xbac    ");
+		ASSERT_FALSE(actual);
+	}
+
+TEST(PracticeTest, nothing){
+	Practice obj;
+		bool actual = obj.isPalindrome("");
+		ASSERT_TRUE(actual);
+}
+
+TEST(PracticeTest, ascending)
 {
     Practice obj;
 		int first = 2;
@@ -42,24 +54,33 @@ TEST(PracticeTest, sortDescending)
     obj.sortDescending(first, second, third);
     ASSERT_GE(first, second);
 		ASSERT_GE(second, third);
+}
 
-		first = 4;
-		second = 3;
-		third = 2;
+TEST(PracticeTest, alreadyDESC){
+	Practice obj;
+		int first = 4;
+		int second = 3;
+		int third = 2;
 		obj.sortDescending(first, second, third);
 		ASSERT_GE(first, second);
 		ASSERT_GE(second, third);
+	}
 
-		first = 0;
-		second = 0;
-		third = 2;
+TEST(PracticeTest, outOfOrder){
+	Practice obj;
+		int first = -2;
+		int second = 0;
+		int third = 2;
 		obj.sortDescending(first, second, third);
 		ASSERT_GE(first, second);
 		ASSERT_GE(second, third);
+}
 
-		first = 0;
-		second = 4;
-		third = 0;
+TEST(PracticeTest,mixed){
+	Practice obj;
+		int first = -3;
+		int second = 4;
+		int third = 0;
 		obj.sortDescending(first, second, third);
 		ASSERT_GE(first, second);
 		ASSERT_GE(second, third);
