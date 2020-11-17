@@ -26,7 +26,7 @@ bool Practice::sortDescending(int & first, int & second, int & third)
     third = temp;
   }
 
-  if((first > second) && (second > third))
+  if((first >= second) && (second >= third))
   {
     return true;
   }

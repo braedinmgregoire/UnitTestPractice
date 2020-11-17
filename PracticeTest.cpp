@@ -16,72 +16,75 @@ class PracticeTest : public ::testing::Test
 
 TEST(PracticeTest, is_simple_palindrome)
 {
-    Practice obj;
-    bool actual = obj.isPalindrome("Not a palindrome");
-    ASSERT_FALSE(actual);
+  Practice obj;
+  bool actual = obj.isPalindrome("Not a palindrome");
+  ASSERT_FALSE(actual);
 }
 
-TEST(PracticeTest, actually_pal){
+TEST(PracticeTest, actually_pal)
+{
 	Practice obj;
-		bool actual = obj.isPalindrome("banaanab");
-		ASSERT_TRUE(actual);
+	bool actual = obj.isPalindrome("banaanab");
+	ASSERT_TRUE(actual);
 	}
 
-TEST(PracticeTest, mixedCasePal){
+TEST(PracticeTest, mixedCasePal)
+{
 	Practice obj;
-		bool actual = obj.isPalindrome("baNAnab");
-		ASSERT_TRUE(actual);
+	bool actual = obj.isPalindrome("baNAnab");
+	ASSERT_TRUE(actual);
 	}
 
-TEST(PracticeTest, hangingEnd){
+TEST(PracticeTest, hangingEnd)
+{
 	Practice obj;
-		bool actual = obj.isPalindrome("xbac    ");
-		ASSERT_FALSE(actual);
+	bool actual = obj.isPalindrome("xbac    ");
+	ASSERT_FALSE(actual);
 	}
 
-TEST(PracticeTest, nothing){
+TEST(PracticeTest, nothing)
+{
 	Practice obj;
-		bool actual = obj.isPalindrome("");
-		ASSERT_TRUE(actual);
+	bool actual = obj.isPalindrome("");
+	ASSERT_TRUE(actual);
 }
 
 TEST(PracticeTest, ascending)
 {
-    Practice obj;
-		int first = 2;
-		int second = 3;
-		int third = 4;
-    obj.sortDescending(first, second, third);
-    ASSERT_GE(first, second);
-		ASSERT_GE(second, third);
+  Practice obj;
+	int first = 2;
+	int second = 3;
+	int third = 4;
+  bool actual = obj.sortDescending(first, second, third);
+  ASSERT_TRUE(actual);
 }
 
-TEST(PracticeTest, alreadyDESC){
+TEST(PracticeTest, alreadyDESC)
+{
 	Practice obj;
-		int first = 4;
-		int second = 3;
-		int third = 2;
-		obj.sortDescending(first, second, third);
-		ASSERT_GE(first, second);
-		ASSERT_GE(second, third);
-	}
-
-TEST(PracticeTest, outOfOrder){
-	Practice obj;
-		int first = -2;
-		int second = 0;
-		int third = 2;
-		obj.sortDescending(first, second, third);
-		ASSERT_GE(first, second);
-		ASSERT_GE(second, third);
+	int first = 4;
+	int second = 3;
+	int third = 2;
+	bool actual = obj.sortDescending(first, second, third);
+	ASSERT_TRUE(actual);
 }
 
-TEST(PracticeTest,mixed){
+TEST(PracticeTest, outOfOrder)
+{
 	Practice obj;
-		int first = -3;
-		int second = 4;
-		int third = 0;
-		obj.sortDescending(first, second, third);
-		ASSERT_GE(first, second);
-		ASSERT_GE(second, third);
+	int first = -2;
+	int second = 0;
+	int third = 2;
+	bool actual = obj.sortDescending(first, second, third);
+	ASSERT_TRUE(actual);
+}
+
+TEST(PracticeTest,mixed)
+{
+	Practice obj;
+	int first = -3;
+	int second = 4;
+	int third = 0;
+	bool actual = obj.sortDescending(first, second, third);
+	ASSERT_TRUE(actual);
 }
